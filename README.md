@@ -18,10 +18,7 @@ Currently, two official plugins are available:
 Run this command on terminal
 
 ```
-npm install
+npm run build
 ```
-then start Vite by running
 
-```
-npm run dev
-```
+
