@@ -74,12 +74,14 @@ const Hero = () => {
                 transition={{ duration: 1, delay: 1.5 }}
                 className="flex flex-row items-center gap-6 my-4 md:mb-0"
                 >
-                    <motion.button whileHover={{ scale: 1.05, boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.3)" }}
+                    <motion.a whileHover={{ scale: 1.05, boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.3)" }}
                         className="z-10 cursor-pointer font-bold text-gray-200 md:w-auto p-4 border
-                                     border-red-700 rounded-xl"     
+                                     border-red-700 rounded-xl"
+                        href="https://drive.google.com/file/d/1KjSqs3G6qmEYNuMVMV2Yx0gEtMXDZHR4/view?usp=sharing"
+                        target="_blank" rel="noopener noreferrer" 
                     >
                         Download CV
-                    </motion.button>
+                    </motion.a>
 
                     <div className="flex gap-6 flex-row text-4xl md:text-6xl text-rose-400 z-20">
                         <motion.a whileHover={{ scale: 1.2 }} href="https://github.com/Archiruz"
