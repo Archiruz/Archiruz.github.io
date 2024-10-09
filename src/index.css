@@ -5,7 +5,7 @@
 
 body {
   font-family: "Space Grotesk", sans-serif;
-  background-color: #190b1f;
+  background-color: #1f0b0b; /* Very dark red */
 }
 
 h2 {
@@ -17,7 +17,7 @@ p {
 }
 
 span {
-  @apply text-purple-600
+  @apply text-rose-400
 }
 
 
@@ -26,9 +26,9 @@ span {
   border-radius: 50%;
   pointer-events: none;
   z-index: 1;
-  background: radial-gradient(circle, rgba(178, 19, 202, 0.2), transparent 70%);
+  background: radial-gradient(circle, rgba(202, 19, 19, 0.2), transparent 70%);
 }
 
 .bg-primary-color {
-    @apply bg-purple-600
+    @apply bg-rose-600
 }

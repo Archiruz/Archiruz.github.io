@@ -54,7 +54,7 @@ const Hero = () => {
                 className="text-gray-200 md:text-7xl text-5xl tracking-tight mb-4"
                 >
                     HEY, I AM <br/>
-                    <span className="text-purple-500">ALVIAN RAHMADANI</span>
+                    <span className="text-rose-600">ALVIAN RAHMADANI</span>
                 </motion.p>
 
                 <motion.p
@@ -76,12 +76,12 @@ const Hero = () => {
                 >
                     <motion.button whileHover={{ scale: 1.05, boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.3)" }}
                         className="z-10 cursor-pointer font-bold text-gray-200 md:w-auto p-4 border
-                                     border-purple-400 rounded-xl"     
+                                     border-red-700 rounded-xl"     
                     >
                         Download CV
                     </motion.button>
 
-                    <div className="flex gap-6 flex-row text-4xl md:text-6xl text-purple-400 z-20">
+                    <div className="flex gap-6 flex-row text-4xl md:text-6xl text-rose-400 z-20">
                         <motion.a whileHover={{ scale: 1.2 }} href="https://github.com/Archiruz"
                         target="_blank" rel="noopener noreferrer">
                             <AiOutlineGithub/>
