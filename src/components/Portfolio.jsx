@@ -1,7 +1,7 @@
 import React from 'react';
 import project1 from "../assets/project1.png"
 import project2 from "../assets/project2.png"
-// import project4 from "../assets/project4.png"
+import project4 from "../assets/project4.png"
 // import project5 from "../assets/project5.png"
 // import project6 from "../assets/project6.png"
 import { AiFillGithub, AiOutlineGithub } from 'react-icons/ai'
@@ -26,15 +26,15 @@ const projects = [
         github: "",
       },
     },
-    // {
-    //   img: project4,
-    //   title: "Project #3",
-    //   description: "An e-commerce platform with various features.",
-    //   links: {
-    //     site: "#",
-    //     github: "#",
-    //   },
-    // },
+    {
+      img: project4,
+      title: "Simple Train Ticketing System",
+      description: "Simple Java based GUI app designed for demonstrating the use of OOP concepts.",
+      links: {
+        site: "",
+        github: "https://github.com/Archiruz/java-oop-demo",
+      },
+    },
     // {
     //   img: project5,
     //   title: "Project #4",

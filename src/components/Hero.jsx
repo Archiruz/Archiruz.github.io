@@ -5,7 +5,6 @@ import ShinyEffect from "./ShinyEffect";
 import {
   AiOutlineGithub,
   AiOutlineInstagram,
-  AiOutlineLink,
   AiOutlineLinkedin,
 } from "react-icons/ai";
 import { 

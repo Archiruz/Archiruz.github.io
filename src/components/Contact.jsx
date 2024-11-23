@@ -1,9 +1,51 @@
-import React from "react"
+import React, {useState} from "react"
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai"
 import { motion } from "framer-motion"
 import Reveal from "./Reveal"
 
 const Contact = () => {
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const [errors, setErrors] = useState({
+    email: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData({ ...formData, [id]: value });
+  };
+
+  const validateForm = () => {
+    let valid = true;
+    let errors = {};
+
+    if (!formData.email) {
+        errors.email = 'Email is required';
+        valid = false;
+    }
+
+    if (!formData.message) {
+        errors.message = 'Message is required';
+        valid = false;
+    }
+
+    setErrors(errors);
+    return valid;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validateForm()) {
+        document.getElementById('form').submit();
+    }
+  };
+
   return (
     <div className="px-6 max-w-[1000px] mx-auto md:my-12" id="contact">
         <Reveal>
@@ -51,6 +93,7 @@ const Contact = () => {
                 method="POST"
                 className=" max-w-6xl p-5 md:p-12"
                 id="form"
+                onSubmit={handleSubmit}
             >
             <p className="text-gray-100 font-bold text-xl mb-2">
               Let´s connect!
@@ -61,6 +104,7 @@ const Contact = () => {
                 placeholder="Your Name ..."
                 name="name"
                 className="mb-2 w-full rounded-md border border-purple-600 py-2 pl-2 pr-4"
+                onChange={handleChange}
             />
             <input
               type="email"
@@ -68,7 +112,9 @@ const Contact = () => {
               placeholder="Your Email ..."
               name="email"
               className="mb-2 w-full rounded-md border border-purple-600 py-2 pl-2 pr-4"
+              onChange={handleChange}
             />
+            {errors.email && <p className="text-red-500">{errors.email}</p>}
             <textarea
               name="textarea"
               id="textarea"
@@ -76,7 +122,9 @@ const Contact = () => {
               rows="4"
               placeholder="Your Message ..."
               className="mb-2 w-full rounded-md border border-purple-600 py-2 pl-2 pr-4"
+              onChange={handleChange}
             />
+            {errors.message && <p className="text-red-500">{errors.message}</p>}
             <button
               type="submit"
               className="w-full py-3 rounded-md text-gray-100 font-semibold text-xl bg-primary-color"
