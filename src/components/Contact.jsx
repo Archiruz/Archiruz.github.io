@@ -103,28 +103,28 @@ const Contact = () => {
                 id="name"
                 placeholder="Your Name ..."
                 name="name"
-                className="mb-2 w-full rounded-md border border-purple-600 py-2 pl-2 pr-4"
+                className="mb-2 w-full rounded-md border border-rose-600 py-2 pl-2 pr-4"
                 onChange={handleChange}
             />
+            {errors.email && <p className="text-red-500">{errors.email}</p>}
             <input
               type="email"
               id="email"
               placeholder="Your Email ..."
               name="email"
-              className="mb-2 w-full rounded-md border border-purple-600 py-2 pl-2 pr-4"
-              onChange={handleChange}
-            />
-            {errors.email && <p className="text-red-500">{errors.email}</p>}
-            <textarea
-              name="textarea"
-              id="textarea"
-              cols="30"
-              rows="4"
-              placeholder="Your Message ..."
-              className="mb-2 w-full rounded-md border border-purple-600 py-2 pl-2 pr-4"
+              className="mb-2 w-full rounded-md border border-rose-600 py-2 pl-2 pr-4"
               onChange={handleChange}
             />
             {errors.message && <p className="text-red-500">{errors.message}</p>}
+            <textarea
+              name="textarea"
+              id="message"
+              cols="30"
+              rows="4"
+              placeholder="Your Message ..."
+              className="mb-2 w-full rounded-md border border-rose-600 py-2 pl-2 pr-4"
+              onChange={handleChange}
+            />
             <button
               type="submit"
               className="w-full py-3 rounded-md text-gray-100 font-semibold text-xl bg-primary-color"
