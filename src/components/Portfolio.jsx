@@ -3,45 +3,54 @@ import project1 from "../assets/project1.png"
 import project2 from "../assets/project2.png"
 import project3 from "../assets/project3.png"
 import project4 from "../assets/project4.png"
-// import project6 from "../assets/project6.png"
+import project5 from "../assets/project5.png"
 import { AiOutlineGithub } from 'react-icons/ai'
 import Reveal from './Reveal';
 
 const projects = [
     {
       img: project1,
-      title: "Confidentz",
-      description: "Dental health companion powered by artificial intelligence.",
+      title: "Simple Train Ticketing System",
+      description: "Simple Java based GUI app designed for demonstrating the use of OOP concepts. (Java)",
       links: {
-        site: "https://www.figma.com/proto/IaZTRmFHfBTdRleh1XONTE/ConfiDentz?node-id=0-1&t=2sXx7vZ8gKxefV47-1",
-        github: "https://github.com/Confidentz-C23-PS334",
+        site: "",
+        github: "https://github.com/Archiruz/java-oop-demo",
       },
     },
     {
       img: project2,
-      title: "Sistem Pemerintahan Berbasis Elektronik (SPBE)",
-      description: "A web-based application for electronic governance made with Laravel.",
-      links: {
-        site: "",
-        github: "",
-      },
-    },
-    {
-      img: project3,
       title: "Banana Ripeness Detection",
-      description: "A Python based app to detect banana ripeness utilizing RoboFlow.",
+      description: "A computer vision app to detect banana ripeness utilizing RoboFlow. (Python)",
       links: {
         site: "",
         github: "https://github.com/Archiruz/computer-vision-demo",
       },
     },
     {
-      img: project4,
-      title: "Simple Train Ticketing System",
-      description: "Simple Java based GUI app designed for demonstrating the use of OOP concepts.",
+      img: project3,
+      title: "Sistem Pemerintahan Berbasis Elektronik (SPBE)",
+      description: "A web-based application for electronic governance made with Laravel. (PHP)",
       links: {
         site: "",
-        github: "https://github.com/Archiruz/java-oop-demo",
+        github: "",
+      },
+    },
+    {
+      img: project4,
+      title: "ConfiDentz",
+      description: "Dental health companion powered by artificial intelligence. (TensorFlow)",
+      links: {
+        site: "https://www.figma.com/proto/IaZTRmFHfBTdRleh1XONTE/ConfiDentz?node-id=0-1&t=2sXx7vZ8gKxefV47-1",
+        github: "https://github.com/Confidentz-C23-PS334",
+      },
+    },
+    {
+      img: project5,
+      title: "Ask Your PDF",
+      description: "Retrieval Augmented Generation (RAG) implemented on Google Gemini AI for question answering on PDFs. (Python)",
+      links: {
+        site: "https://geminiragdemo.streamlit.app/",
+        github: "https://github.com/Archiruz/gemini-rag-demo",
       },
     },
     // {
@@ -56,10 +65,12 @@ const projects = [
   ]
 
 const Portfolio = () => {
+  const reversedProjects = [...projects].reverse();
+
   return (
     <div className='max-w-[1000px] mx-auto p-6 md:my-20' id="portfolio">
         <h2 className='text-3xl font-bold text-gray-200 mb-8'>Portfolio</h2>
-        {projects.map((project, index) => (
+        {reversedProjects.map((project, index) => (
             <Reveal key={index}>
             <div 
             className={`flex flex-col md:flex-row ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''} mb-12`}>
