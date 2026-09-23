@@ -1,7 +1,5 @@
-import React from "react"
 import{
   SiTensorflow,
-  SiMicrosoftexcel,
   SiFastapi,
   SiExpress,
   SiJavascript,
@@ -11,8 +9,8 @@ import{
   SiLaravel,
   SiGithub,
   SiJupyter,
-
 } from "react-icons/si"
+import { AiOutlineFileExcel } from "react-icons/ai"
 
 import Reveal from "./Reveal"
 import { Link } from "react-scroll"
@@ -41,7 +39,7 @@ const skills = [
       technologies: [
         { name: 'Tensorflow', icon: <SiTensorflow className='text-orange-600' /> },
         { name: 'Jupyter', icon: <SiJupyter className='text-red-500' /> },
-        { name: 'Excel', icon: <SiMicrosoftexcel className='text-green-500' /> },
+        { name: 'Excel', icon: <AiOutlineFileExcel className='text-green-500' /> },
       ]
     }
   ]
@@ -61,7 +59,7 @@ const Skills = () => {
         <div className="flex flex-col md:flex-row justify-center space-y-8 md:space-y-0 md:space-x-8
                         ">
             {skills.map((skill, index) => (
-                <div key={index} className="border border-red-900 p-6 rounded-lg bg-rose-900/20 shadow-lg 
+                <div key={index} className="border border-red-900 p-6 rounded-lg bg-rose-900/20 shadow-lg
                                 w-full md:w-1/2">
                     <h3 className="text-xl font-bold mb-4 text-center">{skill.category}</h3>
                     <div className="grid grid-cols-1 gap-4">

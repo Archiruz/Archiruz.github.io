@@ -1,0 +1,59 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { sanityClient } from '../../lib/sanity';
+import { POSTS_QUERY } from '../../lib/queries';
+import Navbar from '../../components/react/Navbar.jsx';
+import Footer from '../../components/react/Footer.jsx';
+
+export async function getStaticPaths() {
+  try {
+    const posts = await sanityClient.fetch(POSTS_QUERY);
+    return posts.map((post) => ({
+      params: { slug: post.slug.current },
+      props: { post },
+    }));
+  } catch (error) {
+    console.error('Failed to fetch posts for blog paths:', error);
+    return [];
+  }
+}
+
+const { post } = Astro.props;
+---
+
+<Layout title={`${post.title} — Alvian Rahmadani`}>
+  <Navbar client:load />
+  <main class="max-w-3xl mx-auto px-6 py-12">
+    <article class="prose prose-invert prose-rose max-w-none">
+      {post.mainImage && (
+        <img
+          src={post.mainImage}
+          alt={post.title}
+          class="w-full h-auto rounded-lg mb-6"
+        />
+      )}
+      <h1 class="text-4xl font-bold text-gray-100 mb-2">{post.title}</h1>
+      {post.publishedAt && (
+        <time class="text-sm text-gray-500">
+          {new Date(post.publishedAt).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })}
+        </time>
+      )}
+      {post.excerpt && (
+        <p class="text-xl text-gray-300 mb-6">{post.excerpt}</p>
+      )}
+      <div class="text-gray-300 leading-relaxed mt-8">
+        {post.body && (
+          <p class="text-gray-400">Blog post body content will be rendered from Portable Text.</p>
+        )}
+      </div>
+    </article>
+    <div class="mt-12">
+      <a href="/blog" class="text-rose-400 hover:text-rose-300">← Back to all posts</a>
+    </div>
+  </main>
+  <Footer />
+</Layout>

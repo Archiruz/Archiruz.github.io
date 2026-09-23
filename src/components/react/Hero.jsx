@@ -1,5 +1,4 @@
-import React from "react";
-import profilepic from "../assets/profpic.png";
+import profilepic from "../../assets/profpic.png";
 import { TypeAnimation } from "react-type-animation";
 import ShinyEffect from "./ShinyEffect";
 import {
@@ -7,13 +6,13 @@ import {
   AiOutlineInstagram,
   AiOutlineLinkedin,
 } from "react-icons/ai";
-import { 
-    SiJavascript, 
-    SiJupyter, 
-    SiLaravel, 
-    SiNodedotjs, 
-    SiPhp, 
-    SiPython, 
+import {
+    SiJavascript,
+    SiJupyter,
+    SiLaravel,
+    SiNodedotjs,
+    SiPhp,
+    SiPython,
     SiTensorflow,
 } from "react-icons/si";
 import { motion } from "framer-motion";
@@ -79,7 +78,7 @@ const Hero = () => {
                         className="z-10 cursor-pointer font-bold text-gray-200 md:w-auto p-4 border
                                      border-red-700 rounded-xl"
                         href="https://drive.google.com/file/d/1KjSqs3G6qmEYNuMVMV2Yx0gEtMXDZHR4/view?usp=sharing"
-                        target="_blank" rel="noopener noreferrer" 
+                        target="_blank" rel="noopener noreferrer"
                     >
                         Download CV
                     </motion.a>
@@ -104,7 +103,7 @@ const Hero = () => {
             </motion.div>
 
 
-            <motion.img 
+            <motion.img
                 src={profilepic}
                 className="w-[300px] md:w-[450px]"
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -134,7 +133,7 @@ const Hero = () => {
         <div className="absolute inset-0 hidden md:block">
             <ShinyEffect left={0} top={0} size={1400} />
         </div>
-        
+
     </div>
   )
 }

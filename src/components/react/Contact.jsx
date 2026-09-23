@@ -1,6 +1,4 @@
-import React, {useState} from "react"
-import { AiFillLinkedin, AiFillGithub } from "react-icons/ai"
-import { motion } from "framer-motion"
+import {useState} from "react"
 import Reveal from "./Reveal"
 
 const Contact = () => {
@@ -23,7 +21,7 @@ const Contact = () => {
 
   const validateForm = () => {
     let valid = true;
-    let errors = {};
+    const errors = {};
 
     if (!formData.email) {
         errors.email = 'Email is required';
@@ -58,7 +56,7 @@ const Contact = () => {
                         passion for applying AI, machine learning and data science to solve real-world challenges. <br /> <br />
                         I have intermediate proficiency in Python, JavaScript, and web development frameworks
                         such as Laravel and PHP. I also have a clear understanding of machine learning concept,
-                        especially with the TensorFlow framework. 
+                        especially with the TensorFlow framework.
                     </p>
                 </div>
 
@@ -117,7 +115,7 @@ const Contact = () => {
             />
             {errors.message && <p className="text-red-500">{errors.message}</p>}
             <textarea
-              name="textarea"
+              name="message"
               id="message"
               cols="30"
               rows="4"
@@ -131,11 +129,11 @@ const Contact = () => {
             >
               Send Message
             </button>
-            
+
           </form>
 
         </div>
-        
+
         </Reveal>
     </div>
   )

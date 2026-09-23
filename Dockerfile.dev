@@ -1,0 +1,16 @@
+FROM node:22-alpine AS base
+WORKDIR /app
+
+# Install dependencies (including dev) for development
+COPY package*.json ./
+RUN npm ci
+
+# Copy source files
+COPY . .
+
+# Install additional tools for hot reload
+RUN apk add --no-cache git
+
+EXPOSE 4321
+
+CMD ["npm", "run", "dev", "--", "--host"]

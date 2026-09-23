@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/react/Navbar.jsx';
+import Hero from '../components/react/Hero.jsx';
+import Skills from '../components/react/Skills.jsx';
+import Portfolio from '../components/react/Portfolio.jsx';
+import Experience from '../components/react/Experience.jsx';
+import Contact from '../components/react/Contact.jsx';
+import Footer from '../components/react/Footer.jsx';
+---
+
+<Layout title="Alvian Rahmadani - Portfolio">
+  <main>
+    <Navbar client:load />
+    <Hero client:load />
+    <Skills client:visible />
+    <Portfolio client:visible />
+    <Experience client:visible />
+    <Contact client:load />
+    <Footer />
+  </main>
+</Layout>
